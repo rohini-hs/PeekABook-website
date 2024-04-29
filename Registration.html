@@ -1,0 +1,136 @@
+<html>
+    <head>
+    <title>
+    Registration Page
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- style for navbar-->
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(218, 237, 241);
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #0593ac;
+  color: white;
+} /* style for navbar */
+
+</style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+
+    <body>
+
+
+        <!-- body header -->
+    <header style="background-color: rgb(51, 177, 196);">
+    <div>
+        <h1 style="text-align: center;">Peek-A-Book</h1>
+    </div>
+    </header>
+    <h3 style="font-family:Comic Sans Ms;text-align:center";font-size:20pt;
+    color:#00FF00;>
+   <MARQUEE>WWW.Peek-A-Book.COM has special offers on new arrivals.Dont forget to check our Home page.</MARQUEE>
+</h3>
+    <!--Navbar code-->
+    <div class="topnav">
+        <a href="">Home</a>
+        <a Class="Active">New User Registration</a>
+        <a href="login.html">User Login</a>
+      </div>
+    
+    
+    <!--Navbar code-->
+
+    <!--Creating a form here with login details-->
+    
+    <div class="w3-container" style="margin: 50px;">
+    <form name="Register" style="border: 1px solid rgb(48, 188, 188);text-align: center; padding:auto;margin: auto;width:50%;">
+      <div style="padding-left:1px">
+        <h2><u> <p>Register</p></u></h2>
+        <h4> <p>Kindly fill in this form to register.</p></h4>
+   
+      </div>
+        <h5>Username<input type="text" name="userid" style="padding: auto; margin: 1%;font-size: 14pt;" required>
+        <br>
+        <h5>Email ID <input type="text" name="userid" style="padding: auto; margin: 1%;font-size: 14pt;" required>
+        <br>
+        <h5>Password<input type="password" name="pwd" style="padding: auto; margin: 1%;font-size: 14pt" required>
+        <br>
+        <h5>Re-entre Password<input type="password" name="pwd" style="padding: auto; margin: 1%;font-size: 14pt" required>
+        <br>
+        <br>
+        <!--add how did you hear about us?-->
+       <fieldset style="padding:auto ;height:50pt;border-color: rgb(48, 188, 188);">
+        
+            <legend>How did you hear about us?</legend>
+            <div>
+              <input type="radio" id="contactChoice1" name="contact" value="SocialMedia" />
+              <label for="contactChoice1">Social Media</label>&nbsp;
+        
+              <input type="radio" id="contactChoice2" name="contact" value="NewsBlog" />
+              <label for="contactChoice2">Newsletters/Blogs</label>&nbsp;
+        
+              <input type="radio" id="contactChoice3" name="contact" value="Engines" />
+              <label for="contactChoice3">Search Engines</label>&nbsp;
+
+              <input type="radio" id="contactChoice4" name="contact" value="Friend" />
+              <label for="contactChoice3">Through a friend</label>&nbsp;
+            </div>
+      </fieldset>
+       <!--add how did you hear about us?-->
+    <br>
+    <!--Uncheck this while verifying
+    <input type="button" onclick="check(this.form)" value="Login"/>
+    <input type="reset" value="Cancel"/>-->
+    <input type="submit" value="Register" style="margin: 3%; padding-left: 1%;width: 20%;" />
+    <input type="reset" value="Cancel" style="margin: 3%; padding-left: 1%;width: 20%;" />
+    
+    <br>
+    </form>
+    </div>
+
+    <!--Javascript to verify -->
+    <script language="javascript">
+    function check(form)/*function to check userid & password*/
+    {
+    /*the following code checkes whether the entered userid and password are matching*/
+    if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd")
+    {
+    window.open('')/*opens the target page while Id & password matches*/
+    }
+    else
+    {
+    alert("Error Password or Username")/*displays error message*/
+    }
+    }
+    </script> 
+
+
+    </body>
+</html>
+
+
