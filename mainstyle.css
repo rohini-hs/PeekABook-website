@@ -1,4 +1,71 @@
-.searchbar{
-width: 50%;
 
+#wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-size:x-large;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 1rem;
+  }
+
+  aside {
+    min-height: 100vh;
+    justify-content: space-between;
+    flex-direction: column;
+    border-right: .5px solid red;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+  }
+
+  .grid { 
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+    }
+
+    .column{
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    display: flex;
+    flex-wrap: wrap;
+  }
+.h3fonts,.h4fonts{
+  font-weight: 300;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+
+  .grid > div img {
+    max-width: 100%;
+  }
+  .text {
+    padding: 0 20px 20px;
+    flex: 25%;
+     padding: 20px;
+  }
+  .text > button {
+    background: rgb(9, 97, 86);
+    border: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 16;
+    }
+
+    #pricetag{
+        text-align: center;
+        font-weight: bold;
+    }
+
+  
+    
