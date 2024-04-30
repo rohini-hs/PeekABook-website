@@ -8,10 +8,62 @@
     <link rel="stylesheet" href = "mainstyle.css">
     <link rel="stylesheet" href=
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
 <style>
- 
+ * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
 </style>
 </head>
 
@@ -49,18 +101,21 @@
               </div>
 
               
-              <form class="grid">
-              <div class = "Class-grid">
-                <img src="./Images/Clocks1.jpeg" alt="clock photo1" style="height: 60%;width: 100%;">
+              <!--<form class="grid">-->
+
+                <div class="row">
+              <div class = "column">
+                <img src="./Images/clock1.webp" alt="clock photo1">
                 <div class="text">
                   <h3 style="text-align: center;">Clock World</h3>
-                  <p>The peacock design wall clock will be an eye-catching statement in any home. Besides being a colourful decoration on the wall, of course it helps you to always keep track of time.</p>
+                  <p>The sun design wall clock will be an eye-catching statement in any home. Besides being a colourful decoration on the wall, of course it helps you to always keep track of time.</p>
                   <p id="pricetag">Rs. 599</p>
                   <button >Add to cart</button>
                 </div>
+                
               </div>
               
-              <div class = "Class-grid">
+              <div class = "column"> 
                 <img src="./Images/Clocks2.jpeg" alt="clock2">
                 <div class="text">
                   <h3 style="text-align: center;">Clock World</h3>
@@ -69,28 +124,28 @@
                   <button>Add to cart</button>
                 </div>
               </div>
-              <div class = "Class-grid">
-                <img src="./Images/idols1.jpg" alt="idol1" style="height: 60%;width: 100%;">
+              <div class = "column">
+                <img src="./Images/ganesha.webp" alt="idol1">
                 <div class="text">
-                  <h3>Table-Top Figurines</h3>
+                  <h3 style="text-align: center">Table-Top Figurines</h3>
                   <p>Beatuiful Ganesh Statue Murti For Festival Office Home Décor Living Room Decoration Items For Home Living Room Pooja Room Table Gift. Good gift for a good price. </p>
                   <p id="pricetag">Rs. 500</p>
                   <button>Add to cart</button>
                 </div>
               </div>
-              <div class = "Class-grid">
+              <div class = "column">
                 <img src="./Images/idol2.jpeg" alt="idol2">
                 <div class="text">
-                  <h3>Table-Top Figurines</h3>
+                  <h3 style="text-align: center;"">Table-Top Figurines</h3>
                   <p>Beautiful MasterPeice Of Meditation/Dhyan Buddha.Meticulously crafted with intricate details, the figurine showcases the skill and artistry of craftsmen, making it a masterpiece of fine craftsmanship</p>
                   <p id="pricetag">Rs. 699</p>
                   <button>Add to cart</button>
                 </div>
               </div>
-              <div class = "Class-grid">
+              <div class = "column">
                 <img src="./Images/Photo frames 1.jpg" alt="photo" " >
                 <div class="text">
-                  <h3>Wall Collage Photo Frame</h3>
+                  <h3 style="text-align: center;"">Wall Collage Photo Frame</h3>
                   <p>4 Photo frame of 5x7 inches photo size, outer size : 6.5 x 8.5 Inches
                     Can be used as a gift for your friends, sweetheart, business partner or family members.
                     </p>
@@ -98,30 +153,30 @@
                   <button>Add to cart</button>
                 </div>
               </div>
-              <div class = "Class-grid">
-                <img src="./Images/Photo frames 2.jpg" alt="photo2" style="height: 60%;width: 100%;">
+              <div class = "column">
+                <img src="./Images/pf.webp" alt="photo2">
                 <div class="text">
-                  <h3>Table Photoframe</h3>
+                  <h3 style="text-align: center;"">Table Photoframe</h3>
                   <p>Photo pieces hang both vertically and horizontally with secure hanging hardware included with each photo Frame - Easy Installation guide included.</p>
                   <p id="pricetag">Rs. 350</p>
                   <button>Add to cart</button>
                 </div>
               </div>
 
-              <div class = "Class-grid">
+              <div class = "column">
                 <img src="./Images/pots1.webp" alt="pots1" style="height: auto;">
                 <div class="text">
-                  <h3>Planter Pot Stand</h3>
+                  <h3 style="text-align: center;"">Planter Pot Stand</h3>
                   <p>This planter Stand can be used indoors, outdoors, bedroom, living room, balcony, patio, garden, front porch, office, and shop, as you wish. </p>
                   <p id="pricetag">Rs. 350</p>
                   <button>Add to cart</button>
                 </div>
               </div>
 
-              <div class = "Class-grid">
+              <div class = "column">
                 <img src="./Images/pots2.webp" alt="pots2" style="height: auto;">
                 <div class="text">
-                  <h3>Elegant Planters</h3>
+                  <h3 style="text-align: center;"">Elegant Planters</h3>
                   <p>Durable and premium quality metallic planters.
                   Comes with a drainage hole at the bottom.</p>
                   <p id="pricetag">Rs. 350</p>
@@ -129,8 +184,8 @@
                 </div>
               </div>
 
-            
-              </form>
+            </div>
+              <!--</form>-->
             </main>
                 <!--Create Card grid>-->
           </div>
