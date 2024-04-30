@@ -1,2 +1,2 @@
-# PeekABook-website
-Capstone project -PeekAbook
+#ShimmerNShine-website
+Capstone project -ShimmerNShine
