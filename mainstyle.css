@@ -32,6 +32,11 @@
     display: flex;
     flex-wrap: wrap;
   }
+.h3fonts,.h4fonts{
+  font-weight: 300;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 
   .grid > div img {
     max-width: 100%;
