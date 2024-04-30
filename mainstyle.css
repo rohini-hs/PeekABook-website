@@ -16,7 +16,7 @@
     min-height: 100vh;
     justify-content: space-between;
     flex-direction: column;
-    border-right: 1px solid red;
+    border-right: .5px solid red;
   }
 
   .grid { 
