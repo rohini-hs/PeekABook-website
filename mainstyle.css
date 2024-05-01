@@ -24,7 +24,7 @@
     text-align: center;
     width: 100%;
     margin-bottom: 0%;
-    bottom: 0%;
+    /*bottom: 0%;*/
     background-color: rgb(9, 67, 67);
     color: white;
   }
