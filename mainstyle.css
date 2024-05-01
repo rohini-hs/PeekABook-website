@@ -23,6 +23,7 @@
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: white;
+    background-image:url(./Images/bg1.jpeg);
   }
 
   .grid { 
