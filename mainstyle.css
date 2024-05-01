@@ -18,6 +18,7 @@
     flex-direction: column;
     border-right: .5px solid red;
   }
+
   footer{
     position: fixed;
     text-align: center;
