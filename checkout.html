@@ -1,262 +1,484 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--<link rel="stylesheet" href = "mainstyle.css">-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {
-  font-family: Arial;
-  font-size: 17px;
-  padding: 8px;
-}
 
-.tablerow
-      {
-        margin: auto;
-       height: 40px;
-        column-width: 30px;
-        text-align: center;
-        background-color: rgb(176, 208, 169);
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" href = "mainstyle.css">-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Arial;
+      font-size: 17px;
+      padding: 8px;
+    }
+
+
+  .nav-bar{
+      height: 50px;
+      display: flex;
+      background: #262626;
+  }
+  
+  .brand{
+      float: left;
+      position: absolute;
+      padding-left: 20px;
+      line-height: 70px;
+      font-size: 1.5em;
+  }
+  
+  .brand a{
+      text-decoration: none;
+      color: white;
+  }
+  
+  .nav-container1{
+      max-width: 1000px;
+     
+      /*margin: 0 auto;*/
+      margin-top: -19px;
+      margin-left: -30px;
+  }
+  
+  nav{
+      float: right;
+      max-height: 1px;
+  }
+  
+  nav ul{
+      list-style: none;
+  }
+  
+  nav ul li{
+      float: left;
+      position: relative;
+  }
+  
+  nav ul li a{
+      display: block;
+      padding: 0 20px;
+      line-height: 50px;
+      background: #262626;
+      text-decoration: none;
+      color: #fff;
+  }
+  
+  nav ul li a:hover{
+      background: #2ab1ce;
+      color: #fff;
+  }
+  
+  nav ul li a:not(:only-child):after{
+      content: '▼';
+      padding-left: 5px;
+  }
+  
+  nav ul li ul li {
+      min-width: 190px;
+  }
+  
+  nav ul li ul li a{
+      padding: 15px;
+      line-height: 20px;
+  }
+  
+  .nav-dropdown{
+      position: absolute;
+      display: none;
+      z-index: 1;
+  }
+  
+  .nav-mobile{
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 70px;
+      width: 70px;
+  }
+  
+  #nav-toggle{
+      position: absolute;
+      left: 18px;
+      top: 40px;
+      cursor: pointer;
+      padding: 10px 35px 15px 0px;
+  }
+  
+  #nav-toggle span,
+  #nav-toggle span::before,
+  #nav-toggle span::after{
+      position: absolute;
+      display: block;
+      content: '';
+      background: #fff;
+      height: 5px;
+      width: 35px;
+      transition: all 300ms ease-in-out;
+  }
+  
+  #nav-toggle span::before{
+      top: -10px;
+  }
+  
+  #nav-toggle span::after{
+      bottom: -10px;
+  }
+  
+  #nav-toggle.active span{
+      background-color: transparent;
+  }
+  
+  #nav-toggle.active span::before, #nav-toggle.active span::after{
+      top: 0;
+  }
+  
+  #nav-toggle.active span::before{
+      transform: rotate(45deg);
+  }
+  
+  #nav-toggle.active span::after{
+      transform: rotate(-45deg);
+  }
+  
+  @media only screen and (max-width: 768px) {
+  
+      .nav-mobile{
+          display: block;
       }
-#header_container{
+  
+      nav{
+          width: 100%;
+          padding: 70px 0 15px;
+      }
+  
+      nav ul{
+          display: none;
+      }
+  
+      nav ul li {
+          float: none;
+      }
+  
+      nav ul li a{
+          padding: 15px;
+          line-height: 20px;
+          padding-left: 25%;
+      }
+  
+  
+      nav ul li ul li a{
+          padding-left: 30%;
+      }
+  
+      .nav-dropdown{
+          position: static;
+      }
+  }
+  
+  @media screen and (min-width: 799px){
+      .nav-list{
+           display: block !important; 
+           font-size: large;
+
+          
+      }
+  }
+
+    /*nav bar */
+    .nav-list {
+      display: block !important;
+      font-size: large;
+
+
+    }
+
+    .tablerow {
+      margin: auto;
+      height: 40px;
+      column-width: 30px;
+      text-align: center;
+      background-color: rgb(176, 208, 169);
+    }
+
+    #header_container {
       background-color: rgb(9, 67, 67);
     }
-* {
-  box-sizing: border-box;
-}
 
-.row {
-  display: -ms-flexbox; 
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin: 0 -16px;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.col-25 {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-}
+    .row {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin: 0 -16px;
+    }
 
-.col-50 {
-  -ms-flex: 50%; /* IE10 */
-  flex: 50%;
-}
+    .col-25 {
+      -ms-flex: 25%;
+      /* IE10 */
+      flex: 25%;
+    }
 
-.col-75 {
-  -ms-flex: 75%; /* IE10 */
-  flex: 75%;
-}
+    .col-50 {
+      -ms-flex: 50%;
+      /* IE10 */
+      flex: 50%;
+    }
 
-.col-25,
-.col-50,
-.col-75 {
-  padding: 0 16px;
-}
+    .col-75 {
+      -ms-flex: 75%;
+      /* IE10 */
+      flex: 75%;
+    }
+
+    .col-25,
+    .col-50,
+    .col-75 {
+      padding: 0 16px;
+    }
 
 
 
-#wrapper {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    font-size:x-large;
-  }
+    #wrapper {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      font-size: x-large;
+    }
 
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
-    background-image:url(./Images/bg1.jpeg);
-  }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: white;
+      background-image: url(./Images/bg1.jpeg);
+    }
 
-.container {
-  background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-}
+    .container {
+      background-color: #f2f2f2;
+      padding: 5px 20px 15px 20px;
+      border: 1px solid lightgrey;
+      border-radius: 3px;
+    }
 
-input[type=text] {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
+    input[type=text] {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
 
-label {
-  margin-bottom: 10px;
-  display: block;
-}
+    label {
+      margin-bottom: 10px;
+      display: block;
+    }
 
-.icon-container {
-  margin-bottom: 20px;
-  padding: 7px 0;
-  font-size: 24px;
-}
+    .icon-container {
+      margin-bottom: 20px;
+      padding: 7px 0;
+      font-size: 24px;
+    }
 
-.btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  width: 100%;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 17px;
-}
+    .btn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      width: 100%;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 17px;
+    }
 
-.btn:hover {
-  background-color: #45a049;
-}
+    .btn:hover {
+      background-color: #45a049;
+    }
 
-a {
-  color: #2196F3;
-}
+    a {
+      color: #2196F3;
+    }
 
-hr {
-  border: 1px solid lightgrey;
-}
+    hr {
+      border: 1px solid lightgrey;
+    }
 
-span.price {
-  float: right;
-  color: grey;
-}
+    span.price {
+      float: right;
+      color: grey;
+    }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
-@media (max-width: 800px) {
-  .row {
-    flex-direction: column-reverse;
-  }
-  .col-25 {
-    margin-bottom: 20px;
-  }
-}
-</style>
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+    @media (max-width: 800px) {
+      .row {
+        flex-direction: column-reverse;
+      }
+
+      .col-25 {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div id="header_container">
-            <div id="wrapper">
-                <img src="./Images/Logo Background Removed.png" width=10%  height=10% style="margin-right: 5%;margin-left: 2%;">  
-                   
-                <form action="#">  
-                    <input type="text" placeholder="Search products" name="search" style="width: 800pt;height: 30pt;">
-                    <button>
-                        <i class="fa fa-search" style="font-size:1.5pc"></i>
-                    </button>
-                </form>
-              </div>
-           </div>
-    
-           <div class = "products">
-            <div >
-              <h4>&nbsp<a href="index.html">Home</a>&nbsp &nbsp<a href="Login.html">SignIn</a>&nbsp &nbsp <a href="Registration.html"> Register &nbsp &nbsp <a href="products.html"> Products</a></h4>
-            </div> 
-            </div>
-    </header>
-<h2 style="text-align: center;">Checkout Details</h2>
+  <header>
+    <div id="header_container">
+      <div id="wrapper">
+        <img src="./Images/Logo Background Removed.png" width=10% height=10% style="margin-right: 5%;margin-left: 2%;">
 
-<!--Final products List-->
-<Table class="Table-container" border="1" style="margin: auto;width: 30%; padding: 1%;">
-  <tr class = "tablerow">
-    <th>Product</th><th>Price</th>
-  </tr>
-  <tr class="tablerow">
-    <td>Clock 1</td>
-    <td>Rs 599</td>
-  </tr>
-  <tr class="tablerow">
-    <td>Pot Stand</td>
-    <td>Rs 350</td>
-  </tr>
-  <tr class="tablerow">
-    <td>Photo Frame1</td>
-    <td>Rs 350</td>
-  </tr>
-  <tr class="tablerow">
-    <td>Ganesha</td>
-    <td> Rs 1500</td>
-  </tr>
-
-  <tr class="tablerow">
-    <td style="background-color: blanchedalmond;font-weight: bold;">
-      Total 
-    </td>
-    <td style="background-color: darksalmon;font-weight: bold;">Rs 2799</td>
-  </tr>
-</Table> 
-<!--Final products List-->
-
-
-<div class="row">
-  <div class="col-75">
-    <div class="container">
-      <form action="/action_page.php">
-      
-        <div class="row">
-          <div class="col-50">
-            <h3>Billing Address</h3>
-            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="" required>
-            <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="" required>
-            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="">
-            <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="" required>
-
-            <div class="row">
-              <div class="col-50">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="" required>
-              </div>
-              <div class="col-50">
-                <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="" required>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-50">
-            <h3>Payment</h3>
-            <label for="fname">Accepted Cards</label>
-            <div class="icon-container">
-              <i class="fa fa-cc-visa" style="color:navy;"></i>
-              <i class="fa fa-cc-amex" style="color:blue;"></i>
-              <i class="fa fa-cc-mastercard" style="color:red;"></i>
-              <i class="fa fa-cc-discover" style="color:orange;"></i>
-            </div>
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="" required>
-            <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="" maxlength="10" required>
-            <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="" required>
-            <div class="row">
-              <div class="col-50">
-                <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="" required>
-              </div>
-              <div class="col-50">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="" required>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-        </label>
-        <input type="submit" value="Continue to checkout" class="btn">
-      </form>
+        <form action="#">
+          <input type="text" placeholder="Search products" name="search" style="width: 800pt;height: 30pt;">
+          <button>
+            <i class="fa fa-search" style="font-size:1.5pc"></i>
+          </button>
+        </form>
+      </div>
     </div>
-  </div>
-  <!--<div class="col-25">
+
+    <div class="products">
+      <!--<div >
+              <h4>&nbsp<a href="index.html">Home</a>&nbsp &nbsp<a href="Login.html">SignIn</a>&nbsp &nbsp <a href="Registration.html"> Register &nbsp &nbsp <a href="products.html"> Products</a></h4>
+            </div> -->
+
+      <!--Adding navigation bar-->
+
+      <div class="nav-bar">
+        <div class="nav-container1">
+          <div class="brand">
+
+          </div>
+          <nav>
+            <div class="nav-mobile">
+              <a href="#" id="nav-toggle">
+                <span></span>
+              </a>
+            </div>
+            <ul class="nav-list">
+              <li><a href="login.html">Sign In</a></li>
+              <!--<li><a href="Registration.html">New Registration</a></li>-->
+              <li><a href="products.html">Products</a></li>
+              <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+            <ul class="nav-dropdown">
+              <li><a href="login.html">Sign In</a></li>
+              <!--<li><a href="Registration.html">New Registration</a></li>-->
+              <li><a href="products.html">Products</a></li>
+              <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!--adding nav bar-->
+
+
+  </header>
+  <h2 style="text-align: center;">Checkout Details</h2>
+
+  <!--Final products List-->
+  <Table class="Table-container" border="1" style="margin: auto;width: 30%; padding: 1%;">
+    <tr class="tablerow">
+      <th>Product</th>
+      <th>Price</th>
+    </tr>
+    <tr class="tablerow">
+      <td>Clock 1</td>
+      <td>Rs 599</td>
+    </tr>
+    <tr class="tablerow">
+      <td>Pot Stand</td>
+      <td>Rs 350</td>
+    </tr>
+    <tr class="tablerow">
+      <td>Photo Frame1</td>
+      <td>Rs 350</td>
+    </tr>
+    <tr class="tablerow">
+      <td>Ganesha</td>
+      <td> Rs 1500</td>
+    </tr>
+
+    <tr class="tablerow">
+      <td style="background-color: blanchedalmond;font-weight: bold;">
+        Total
+      </td>
+      <td style="background-color: darksalmon;font-weight: bold;">Rs 2799</td>
+    </tr>
+  </Table>
+  <!--Final products List-->
+
+
+  <div class="row">
+    <div class="col-75">
+      <div class="container">
+        <form action="/action_page.php">
+
+          <div class="row">
+            <div class="col-50">
+              <h3>Billing Address</h3>
+              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="" required>
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" id="email" name="email" placeholder="" required>
+              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+              <input type="text" id="adr" name="address" placeholder="">
+              <label for="city"><i class="fa fa-institution"></i> City</label>
+              <input type="text" id="city" name="city" placeholder="" required>
+
+              <div class="row">
+                <div class="col-50">
+                  <label for="state">State</label>
+                  <input type="text" id="state" name="state" placeholder="" required>
+                </div>
+                <div class="col-50">
+                  <label for="zip">Zip</label>
+                  <input type="text" id="zip" name="zip" placeholder="" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-50">
+              <h3>Payment</h3>
+              <label for="fname">Accepted Cards</label>
+              <div class="icon-container">
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                <i class="fa fa-cc-discover" style="color:orange;"></i>
+              </div>
+              <label for="cname">Name on Card</label>
+              <input type="text" id="cname" name="cardname" placeholder="" required>
+              <label for="ccnum">Credit card number</label>
+              <input type="text" id="ccnum" name="cardnumber" placeholder="" maxlength="10" required>
+              <label for="expmonth">Exp Month</label>
+              <input type="text" id="expmonth" name="expmonth" placeholder="" required>
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">Exp Year</label>
+                  <input type="text" id="expyear" name="expyear" placeholder="" required>
+                </div>
+                <div class="col-50">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" name="cvv" placeholder="" required>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <label>
+            <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+          </label>
+          <input type="submit" value="Continue to checkout" class="btn">
+        </form>
+      </div>
+    </div>
+    <!--<div class="col-25">
     <div class="container">
       <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
       <p><a href="#">Clock 1</a> <span class="price">Rs 599</span></p>
@@ -267,6 +489,7 @@ span.price {
       <p>Total <span class="price" style="color:black"><b>Rs 2799</b></span></p>
     </div>
   </div>-->
-x
+    x
 </body>
+
 </html>
